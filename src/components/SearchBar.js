@@ -1,32 +1,34 @@
+
 import React, { useState } from "react";
 import "../components/SearchBar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
-
-
+import {Link} from "react-router-dom";
 function SearchBar({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
-
+  const [variable, setVariable]= useState("");
+  console.log({wordEntered})
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
     const newFilter = data.filter((value) => {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
-
     if (searchWord === "") {
       setFilteredData([]);
     } else {
       setFilteredData(newFilter);
     }
   };
-
   const clearInput = () => {
     setFilteredData([]);
     setWordEntered("");
   };
-
+  const setValues = (value) =>{
+    console.log(value);
+    setVariable(variable);
+  }
   return (
     <div className="search">
       <div className="searchInputs">
@@ -49,7 +51,7 @@ function SearchBar({ placeholder, data }) {
           {filteredData.slice(0, 15).map((value, key) => {
             return (
               <a className="dataItem" href={value.link} target="_blank">
-                <p>{value.title} </p>
+                <Link to="/cities"><p onClick={ ()=>{setValues(value.title)} }>{value.title}</p></Link>
               </a>
             );
           })}
@@ -58,5 +60,4 @@ function SearchBar({ placeholder, data }) {
     </div>
   );
 }
-
 export default SearchBar;

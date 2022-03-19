@@ -1,6 +1,7 @@
-
+import '../components/carousel.css';
 import SearchBar from "../components/SearchBar";
 import BookData from "../components/Data.json";
+import buildata from "../components/building.json";
 import files from '../images/file.gif';
 import { Carousel } from 'react-bootstrap';
 import Mylogo from '../images/CPSN.png'
@@ -11,7 +12,7 @@ import { NavDropdown } from 'react-bootstrap';
 import { Navbar } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Nav } from 'react-bootstrap';
-
+import {Carousels} from '../components/Carousels';
 
 function Home ()
 {
@@ -31,7 +32,7 @@ function Home ()
                     <Navbar.Text>
                     <Nav className="me-auto">
                         <Nav.Link href="#">Home</Nav.Link>
-                        <Nav.Link href="#link">Link</Nav.Link>    
+                        <Nav.Link href="#link">services</Nav.Link>    
                             <NavDropdown
                                 id="nav-dropdown-dark-example"
                                 title="Login/Register"
@@ -52,46 +53,67 @@ function Home ()
             {/* Main 1st page of Website */}
 
             <div className="Mainpage">
+
                         <h1>Connecting Professional Services Nearby</h1>
                                              <div className="Search-box">
-                            <SearchBar placeholder="Search for a Building.." data={BookData} />
-            </div>
+                                             <SearchBar placeholder="Search for a Building.." data={buildata} />
+                                             </div>
+                                            <h2 className="Or">Or</h2>
+                                             <div className="Search-box2">
+                                             <SearchBar placeholder="Search for a Service.." data={BookData} />
+                                             </div>
                     
-             <div class="directnames">
-                        <ul className="Lists">
-                          <a href="#action/3.1">
-                              <li>New Building</li>
-                           </a>
-                          <a href="#action/3.1"><li>New Building</li></a>
-                          <a href="#action/3.1"><li>New Building</li></a>
-                        </ul>
 
-                        <ul className="Lists">
-                          <a href="#action/3.1"><li>New Building </li></a>
-                          <a href="#action/3.1"><li>New Building</li></a>
-                          <a href="#action/3.1"><li>New Building</li></a>
-                          <a href="#action/3.1"><li>New Building</li></a>
-                        </ul>
-
+            <div className="carousel">
+           
+            <div style={{ maxWidth: 1200, marginLeft: 'auto', marginRight: 'auto', marginTop: 64 }}>
+            <Carousels
+                show={2}
+            >
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
                     </div>
-
-                <div className="works">
-                <div className="imagework">
-                    <img class="worksimage" src={files} alt="Card image cap"/>
                 </div>
-                <div className="worksdata">
-                    <p> <span className="headingworks">  1 - Select The services<br/> </span>  
-                        <h3 className="workspara">   Select the services you want from the homepage from the drop down menu.</h3>
-                        <br/>
-                        <span className="headingworks">  2 - Scroll and Select<br/> </span> 
-                        <h3 className="workspara">   Find out according to reviews and your preferences that which service provider will suit you best.</h3>
-                            <br/>
-                            <span className="headingworks"> 3 - Contact Directly<br/> </span>
-                            <h3 className="workspara">   you will be able to watch Service provider details</h3>
-                    </p>    
-                 </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+                <div>
+                    <div style={{padding: 8}}>
+                        <img src="https://via.placeholder.com/300x300" alt="placeholder" style={{width: '100%'}} />
+                    </div>
+                </div>
+            </Carousels>
+        </div>
             
-                </div>
+            </div>
 
              </div>
 
@@ -99,9 +121,12 @@ function Home ()
                 <div className="footerhome">
                         <div className="logo">
                         <img class="logoimage" src={Mylogo} alt="logoimage"/>
-                              <h2>  329 Queensberry Street, North Melbourne VIC 3051, Australia.<br/>
-                                    123 456 7890.<br/>
-                                    support@prodrive.com.<br/></h2>  
+                        <br/>
+                              <h2> CPSN is website providing all services for commercial buildings<br/> 
+                              <br/></h2>  
+                   
+
+
                         </div>
                         <div className="footerdata">
                                 <i class="fa fa-facebook"></i>  
