@@ -52,7 +52,7 @@ function SearchBar({ placeholder, data }) {
           {filteredData.slice(0, 15).map((value, key) => {
             return (
               <a className="dataItem" href={value.link} target="_blank">
-                <Link to="/datatable"><p onClick={ ()=>{setValues(value.title)} }>{value.title}</p></Link>
+                <Link to="/service"><p onClick={ ()=>{setValues(value.title)} }>{value.title}</p></Link>
               </a>
             );
           })}

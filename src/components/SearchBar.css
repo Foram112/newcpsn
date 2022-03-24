@@ -1,12 +1,13 @@
 .search{
-  margin: 0 auto;
+
+  padding-top: 10px;
 }
 
 .searchInputs {
-   
-    display: flex;
+  display: flex;
+  width: 20%;
+  margin: 0 auto;
   }
-  
   .search input {
     background-color: rgb(194, 194, 194);
     border: 0;
